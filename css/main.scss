@@ -1,5 +1,7 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
+# Theme based on Minima
+# /usr/local/lib/ruby/gems/2.3.0/gems/minima-1.2.0
 ---
 @charset "utf-8";
 
@@ -36,4 +38,23 @@ $on-laptop:        800px;
 // }
 
 // Import partials from the `minima` theme.
-@import "minima";
+// @import "minima";
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+@import
+  "base",
+  "layout",
+  "syntax-highlighting"
+;

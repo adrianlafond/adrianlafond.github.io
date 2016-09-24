@@ -26,10 +26,9 @@ social:
 
 # Build settings
 markdown: kramdown
-theme: minima
+# theme: minima
 
 sass:
-  sass_dir:         css
   style:            :expanded
 
 gems:
