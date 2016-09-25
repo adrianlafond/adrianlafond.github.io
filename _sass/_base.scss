@@ -16,7 +16,16 @@ dl, dd, ol, ul, figure {
 body {
     font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
     color: $text-color;
-    background-color: $background-color;
+    // background: $background-color;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeee00+0,f5f5f5+100 */
+    background: #eeee00; /* Old browsers */
+    background: -moz-linear-gradient(top, #eeee00 0%, #f5f5f5 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #eeee00 0%,#f5f5f5 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #eeee00 0%,#f5f5f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeee00', endColorstr='#f5f5f5',GradientType=0 ); /* IE6-9 */
+
+    background-attachment: fixed;
+
     -webkit-text-size-adjust: 100%;
     -webkit-font-feature-settings: "kern" 1;
     -moz-font-feature-settings: "kern" 1;
@@ -81,8 +90,12 @@ li {
 /**
  * Headings
  */
+h1.site-title {
+  font-weight: 600;
+}
 h1, h2, h3, h4, h5, h6 {
-    font-weight: $base-font-weight;
+  color: $brand-color;
+    // font-weight: $base-font-weight;
 }
 
 
@@ -95,7 +108,7 @@ a {
     text-decoration: none;
 
     &:visited {
-        color: darken($brand-color, 15%);
+        // color: darken($brand-color, 15%);
     }
 
     &:hover {
@@ -130,9 +143,11 @@ blockquote {
 pre,
 code {
     font-size: 15px;
-    border: 1px solid $grey-color-light;
-    border-radius: 3px;
-    background-color: #eef;
+    // border: 1px solid $grey-color-light;
+    border-radius: 4px;
+    background-color: #eeee00;
+    color: #000;
+    font-family: "Space Mono", monospace;
 }
 
 code {
