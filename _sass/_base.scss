@@ -90,12 +90,45 @@ li {
 /**
  * Headings
  */
-h1.site-title {
-  font-weight: 600;
+.site-title {
+  color: $background-color;
+  background-color: $brand-color;
+
+  a, a:visited {
+    color: $background-color;
+    background-color: $brand-color;
+
+    &:hover, &:active {
+      color: $background-color;
+      background-color: $brand-color;
+    }
+  }
 }
+
+h2.site-title {
+  // padding: 0 $spacing-unit/2;
+  margin-bottom: 0;
+  font-weight: 400;
+  transform: rotate(180deg);
+  text-align: right;
+}
+
 h1, h2, h3, h4, h5, h6 {
-  color: $brand-color;
+  color: $header-color;
     // font-weight: $base-font-weight;
+
+  a, a:visited {
+    color: $header-color;
+    background-color: $background-color;
+    border-width: 0;
+    @include transition(background-color 0.3s, color 0.3s);
+
+    &:hover, &:active {
+      border-width: 0;
+      background-color: $header-color;
+      color: $background-color;
+    }
+  }
 }
 
 
@@ -104,17 +137,20 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-    color: $brand-color;
-    text-decoration: none;
+  color: $text-color;
+  text-decoration: none;
+  border-width: 0 0 2px 0;
+  border-style: solid;
+  border-color: $link-color;
+  @include transition(border 0.1s);
 
-    &:visited {
-        // color: darken($brand-color, 15%);
-    }
+  &:visited {
+    color: darken($text-color, 15%);
+  }
 
-    &:hover {
-        color: $text-color;
-        text-decoration: underline;
-    }
+  &:hover, &:active {
+    border-width: 0 0 10px 0;
+  }
 }
 
 
@@ -177,6 +213,7 @@ pre {
     margin-left: auto;
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
+    margin-bottom: 24px;
     @extend %clearfix;
 
     @include media-query($on-laptop) {
